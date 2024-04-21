@@ -4,6 +4,7 @@ If you want to change the theme. You can use other themes are existing here: htt
 
 ## Benefits of using this boilerplate
 
+- This template migrated to the latest version of Astro v4
 - Only need to use the Obsidian to write and manage the content
 - Provide the Image Optimization using sharp
 - Provide the [Astro View Transitions](https://docs.astro.build/en/guides/view-transitions/)
