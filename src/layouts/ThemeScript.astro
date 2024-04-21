@@ -1,0 +1,35 @@
+---
+/*
+  This is not a layout but just a component that's used in layouts.
+*/
+---
+
+<script is:inline>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    function setDarkMode(document) {
+      if (typeof window !== 'undefined') {
+        const defaultIsDark = true;
+
+        const storageTheme = localStorage.getItem('theme');
+        if (!storageTheme && defaultIsDark) {
+          document.documentElement.classList.add('dark');
+          document.head.children.namedItem('theme-color').content = '#0e141b';
+        } else if (storageTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.head.children.namedItem('theme-color').content = '#0e141b';
+        } else {
+          // we already server render light theme
+          document.head.children.namedItem('theme-color').content = '#ffffff';
+        }
+      }
+    }
+
+    setDarkMode(document);
+
+    document.addEventListener('astro:before-swap', (ev) => {
+      // Pass the incoming document to set the theme on it
+      setDarkMode(ev.newDocument);
+    });
+  })();
+</script>

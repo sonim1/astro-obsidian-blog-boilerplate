@@ -1,0 +1,56 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import DarkModeToggle from './DarkModeToggle.astro';
+
+import { getLangFromUrl } from '../i18n/utils';
+import siteConfig from '../../site.config.mjs';
+
+const lang = getLangFromUrl(Astro.url);
+const {
+  header: {
+    github: { url: githubURL },
+    youtube: { url: youtubeURL },
+    website: { url: websiteURL },
+  },
+} = siteConfig;
+---
+
+<header>
+  <a
+    class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
+    href="#main"
+  >
+    Skip to content
+  </a>
+  <nav>
+    <section class="text-text-bold">
+      <ul class="unset flex gap-4 [&>li]:p-0">
+        <li><HeaderLink href={`/`}>Home</HeaderLink></li>
+        <li><HeaderLink href={`/${lang}/blog`}>Blog</HeaderLink></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold">
+    <a class="unset text-xl ml-4 hover:text-text-link" href={websiteURL}>
+      <i class="fa-solid fa-home" aria-hidden="true" title="Website"></i>
+      <span class="fa-sr-only">Website</span>
+    </a>
+    <a class="unset text-xl ml-4 hover:text-text-link" href={githubURL}>
+      <i class="fa-brands fa-github" aria-hidden="true" title="Sonim1 on GitHub"></i>
+      <span class="fa-sr-only">GitHub</span>
+    </a>
+    <a class="unset text-xl ml-4 hover:text-text-link" href={youtubeURL}>
+      <i class="fa-brands fa-youtube" aria-hidden="true" title="Youtube"></i>
+      <span class="fa-sr-only">Youtube</span>
+    </a>
+  </div>
+  <DarkModeToggle />
+</header>
+<style>
+  header {
+    grid-area: header;
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(0, max-content);
+  }
+</style>

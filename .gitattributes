@@ -1,0 +1,6 @@
+# Usual image types
+src/assets/*.png filter=lfs diff=lfs merge=lfs -text
+src/assets/*.jpeg filter=lfs diff=lfs merge=lfs -text
+src/assets/*.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/*.bmp filter=lfs diff=lfs merge=lfs -text
+src/assets/*.svg filter=lfs diff=lfs merge=lfs -text

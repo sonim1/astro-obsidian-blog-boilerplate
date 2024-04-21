@@ -1,0 +1,76 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import PageMeta from '@components/PageMeta.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '@utils/date';
+import siteConfig from '../../../../site.config.mjs';
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: {
+        lang: 'ko',
+      },
+    },
+    {
+      params: {
+        lang: 'en',
+      },
+    },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const allBlogPosts = await getCollection(
+  'blog',
+  (post) => post.data.draft !== true && post.slug.indexOf(`${lang}/`) === 0
+);
+
+const sortedPosts = allBlogPosts
+  .map((post) => ({
+    ...post,
+    path: `/${lang}/blog/${post.slug.substring(3)}`,
+  }))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+---
+
+<PageLayout>
+  <PageMeta title={`Blog | ${siteConfig.site.title}`} slot="meta" />
+  <section slot="main">
+    {
+      lang === 'en' ? (
+        <div class="text-center mt-20">
+          <h1 class="text-4xl font-extrabold">Coming soon</h1>
+          <p class="mt-3 text-lg text-gray-500">English posts are in translation.</p>
+        </div>
+      ) : (
+        <ul>
+          {sortedPosts.map((post) => {
+            return (
+              <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-center">
+                <div class="title">
+                  {post.data.external ? (
+                    <a href={post.data.url} target="_blank" class="unset hover:text-text-link" data-astro-prefetch>
+                      <span>{post.data.title}</span>
+                      <span>
+                        <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square pt-1" />
+                      </span>
+                    </a>
+                  ) : (
+                    <a href={post.path} class="unset hover:text-text-link" data-astro-prefetch>
+                      {post.data.title}
+                    </a>
+                  )}
+                </div>
+                <div class="text-text-muted text-sm italic">
+                  <time datetime={post.data.date.toISOString()}>{formatDate(lang, post.data.date)}</time>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )
+    }
+  </section>
+</PageLayout>

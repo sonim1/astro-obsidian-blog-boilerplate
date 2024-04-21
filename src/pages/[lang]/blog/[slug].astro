@@ -1,0 +1,56 @@
+---
+import readingTime from 'reading-time';
+import BlogPostMeta from '@components/BlogPostMeta.astro';
+import ContentLayout from '@layouts/ContentLayout.astro';
+import { getCollection, getEntryBySlug } from 'astro:content';
+
+export async function getStaticPaths({}) {
+  const allBlogPosts = await getCollection('blog', ({ data }) => data.draft === false && data.external === false);
+
+  const paths = allBlogPosts.map((post) => {
+    const [lang, ...slug] = post.slug.split('/');
+    return { params: { lang, slug: slug.join('/') || undefined }, props: post };
+  });
+
+  return paths;
+}
+
+const post = Astro.props;
+const { slug, lang } = Astro.params;
+
+if (typeof slug !== 'string') {
+  throw Error(`slug should be string. Received: ${slug}`);
+}
+
+const result = await getEntryBySlug('blog', `${lang}/${slug}`);
+
+if (!result) {
+  throw Error(`No blog post found for slug: ${slug}`);
+}
+
+const { text: readingTimeText } = readingTime(result.body);
+
+const { Content } = await result.render();
+---
+
+<ContentLayout
+  title={post.data.title}
+  date={post.data.date}
+  readingTime={readingTimeText}
+  cover={post.data.cover}
+  coverAlt={post.data.coverAlt}
+  url={post.data.url}
+>
+  <BlogPostMeta
+    title={post.data.title}
+    description={post.data.external ? undefined : post.data.description}
+    publishDate={post.data.date.toISOString()}
+    pagePath={`/${lang}/blog/${slug}`}
+    ogImageAbsoluteUrl={post.data.cover.src}
+    ogImageAltText={post.data.coverAlt}
+    ogImageWidth={post.data.cover.width}
+    ogImageHeight={post.data.cover.height}
+    slot="meta"
+  />
+  <Content slot="content" />
+</ContentLayout>

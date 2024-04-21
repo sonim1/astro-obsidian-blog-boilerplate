@@ -1,0 +1,17 @@
+---
+import { languages } from 'src/i18n/ui';
+---
+
+<div class="flex">
+  <i
+    class="flex flex-row items-center mt-0.5 unset text-xl ml-3 mr-1 hover:text-text-link fa-regular fa-language"
+    aria-hidden="true"
+    title="Youtube"></i>
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <a class="m-1 unset" href={`/${lang}/blog`}>
+        {label}
+      </a>
+    ))
+  }
+</div>

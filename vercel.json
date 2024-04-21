@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/ko/", "destination": "/ko/blog", "permanent": false },
+    { "source": "/en/", "destination": "/en/blog", "permanent": false }
+  ]
+}
