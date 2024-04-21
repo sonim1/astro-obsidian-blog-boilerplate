@@ -49,7 +49,7 @@ export default defineConfig({
     sitemap({
       serialize(item) {
         if (
-          ['https://dev.sonim1.com/', 'https://dev.sonim1.com/en/blog/', 'https://dev.sonim1.com/ko/blog/'].includes(
+          [`${siteConfig.liveURL}/`, `${siteConfig.liveURL}/en/blog/`, `${siteConfig.liveURL}/ko/blog/`].includes(
             item.url
           )
         ) {

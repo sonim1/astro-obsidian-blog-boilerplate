@@ -1,6 +1,7 @@
 <script>
   let theme = localStorage.getItem('theme') ?? 'dark';
 
+  // Add your giscus
   const generateNewScript = (theme: string) => {
     if (theme !== 'dark' && theme !== 'light') {
       theme = 'dark';
@@ -8,18 +9,18 @@
 
     let script = document.createElement('script');
 
-    script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'sonim1/dev-blog-giscus');
-    script.setAttribute('data-repo-id', 'R_kgDOLAKnJg');
-    script.setAttribute('data-category', 'General');
-    script.setAttribute('data-category-id', 'DIC_kwDOLAKnJs4CcJx9');
-    script.setAttribute('data-mapping', 'pathname');
-    script.setAttribute('data-strict', '0');
-    script.setAttribute('data-reactions-enabled', '0');
-    script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'bottom');
-    script.setAttribute('data-lang', 'en');
-    script.setAttribute('loading', 'lazy');
+    // script.src = 'https://giscus.app/client.js';
+    // script.setAttribute('data-repo', 'REPONAME/REPO');
+    // script.setAttribute('data-repo-id', 'REPO_ID');
+    // script.setAttribute('data-category', 'CATEGORY');
+    // script.setAttribute('data-category-id', 'CATEGORY_ID');
+    // script.setAttribute('data-mapping', 'pathname');
+    // script.setAttribute('data-strict', '0');
+    // script.setAttribute('data-reactions-enabled', '0');
+    // script.setAttribute('data-emit-metadata', '0');
+    // script.setAttribute('data-input-position', 'bottom');
+    // script.setAttribute('data-lang', 'en');
+    // script.setAttribute('loading', 'lazy');
     script.crossOrigin = 'anonymous';
     script.async = true;
 
@@ -37,7 +38,7 @@
     giscusElement?.removeChild(script);
     document.querySelector('.giscus')?.remove();
 
-    // Add the new giscus 
+    // Add the new giscus
     script = generateNewScript(theme);
     giscusElement?.appendChild(script);
   }
