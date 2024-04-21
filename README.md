@@ -9,7 +9,7 @@ If you want to change the theme. You can use other themes are existing here: htt
 - Provide the [Astro View Transitions](https://docs.astro.build/en/guides/view-transitions/)
 - Provide the `web analytics` on Vercel
 - Provide the `speed insights` on Vercel
-- Show the 100 score on `speed insights` on Vercel
+- Show the score as 100 on `speed insights` and `lighthouse`
 
 ## Template
 
@@ -38,3 +38,33 @@ Download [Obsidian](https://obsidian.md/)
 I recommend to use the vercel.
 
 Follow steps in this document: [Link](https://vercel.com/docs/frameworks/astro)
+
+## How to customize
+
+Please update the `site.config.mjs` file
+
+```
+export default {
+  localhostURL: `http://localhost:3000`,
+  liveURL: 'https://dev.sonim1.com',
+  name: 'My name',
+  site: {
+    title: 'My Blog',
+    description: `Hello world!`,
+  },
+  header: {
+    github: {
+      url: 'https://github.com/sonim1',
+    },
+    youtube: {
+      url: 'https://www.youtube.com/@bumfoo/videos',
+    },
+    website: {
+      url: 'https://welcome.sonim1.com',
+    },
+  },
+  seo: {
+    twitter: '@your_twitter_handle',
+  },
+};
+```
