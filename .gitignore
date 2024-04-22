@@ -212,6 +212,11 @@ dist
 
 .obsidian/workspace
 
+# obsidian workspace
+.space
+.trash
+.makemd/*
+
 # versions since 1.0 use workspace.json instead
 src/.obsidian/workspace.json
 src/.obsidian/text-generator.json
