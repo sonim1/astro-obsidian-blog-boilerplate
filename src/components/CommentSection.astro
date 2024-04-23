@@ -23,20 +23,21 @@
     // script.setAttribute('loading', 'lazy');
     script.crossOrigin = 'anonymous';
     script.async = true;
+    script.id = 'giscus-script';
 
     script.setAttribute('data-theme', theme);
     return script;
   };
 
-  // Add a script tag to the document.
-  let script = generateNewScript(theme);
-  const giscusElement = document.getElementById('giscus-section');
-  giscusElement?.appendChild(script);
-
   function setTheme(theme: 'dark' | 'light') {
-    // Remove giscus
-    giscusElement?.removeChild(script);
-    document.querySelector('.giscus')?.remove();
+    let script = document.getElementById('giscus-script');
+    const giscusElement = document.getElementById('giscus-section');
+
+    if (script) {
+      // Remove giscus
+      giscusElement?.removeChild(script);
+      document.querySelector('.giscus')?.remove();
+    }
 
     // Add the new giscus
     script = generateNewScript(theme);
@@ -56,5 +57,14 @@
     if (event.key === 'theme') {
       updateThemeFromLocalStorage();
     }
+  });
+
+  // Event listener to adding giscus after page load
+  document.addEventListener('astro:page-load', function () {
+    // Add a script tag to the document.
+    let script = generateNewScript(theme);
+    const giscusElement = document.getElementById('giscus-section');
+
+    giscusElement?.appendChild(script);
   });
 </script>
