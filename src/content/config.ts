@@ -13,7 +13,7 @@ const blogCollection = defineCollection({
         invalid_type_error: 'title must be a string',
       }),
       cover: image().default({
-        src: '../assets/no-image-found.jpg',
+        src: '../assets/no-image-found.webp',
         width: 1100,
         height: 1100,
         format: 'jpg',
