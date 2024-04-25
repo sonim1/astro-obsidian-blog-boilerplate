@@ -1,5 +1,9 @@
 This boilerplate is using the [Blogster](https://astro.build/themes/details/blogster-sleek/) theme.
 
+## Showcase
+
+[DEMO](https://astro-obsidian-blog-boilerplate.vercel.app/) | [Kendrick's dev blog](https://dev.sonim1.com/) | [Theo's dev box](https://blog-astro-sandy.vercel.app/)
+
 If you want to change the theme. You can use other themes are existing here: https://astro.build/themes/
 
 ## Benefits of using this boilerplate
