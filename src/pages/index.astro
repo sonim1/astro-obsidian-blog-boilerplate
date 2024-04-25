@@ -35,18 +35,14 @@ export async function getStaticPaths() {
 <PageLayout>
   <PageMeta title={`Home | ${siteConfig.site.title}`} slot="meta" />
   <section slot="main" class="blog-post prose max-w-none prose-sleek">
-    <h1
-      class="m-0 mb-[0.25em] leading-normal text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400"
-    >
+    <h1 class="m-0 mb-[0.25em] leading-normal">
       {siteTitle}
     </h1>
     <p>
       {siteDescription}
     </p>
 
-    <h2
-      class="flex items-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r via-30% from-blue-400 via-orange-300 to-green-400 justify-center sm:justify-start"
-    >
+    <h2 class="flex items-center font-extrabold justify-center sm:justify-start">
       Recent Articles<a
         href={'/ko/blog'}
         class="text-sm font-semibold bg-none unset"
@@ -84,6 +80,8 @@ export async function getStaticPaths() {
       }
     </div>
 
-    <div class="flex items-center justify-center w-full h-16 bg-blue-950 mt-10"><p>Decorate your homepage</p></div>
+    <div class="flex items-center justify-center w-full h-16 mt-10 text-lg font-bold">
+      <p>Decorate your homepage</p>
+    </div>
   </section>
 </PageLayout>
