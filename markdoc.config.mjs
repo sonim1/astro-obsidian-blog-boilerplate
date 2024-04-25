@@ -24,14 +24,6 @@ export default defineMarkdocConfig({
       },
       selfClosing: true,
     },
-    codepen: {
-      render: component('./src/components/markdoc/CodePenEmbed.astro'),
-      attributes: {
-        url: { type: String, required: true },
-        title: { type: String, required: true },
-      },
-      selfClosing: true,
-    },
     githubgist: {
       render: component('./src/components/markdoc/GitHubGistEmbed.astro'),
       attributes: {
