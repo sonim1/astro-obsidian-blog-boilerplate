@@ -1,6 +1,6 @@
 export default {
   localhostURL: `http://localhost:3000`,
-  liveURL: 'https://dev.sonim1.com',
+  liveURL: 'https://astro-obsidian-blog-boilerplate.vercel.app',
   name: 'My name',
   site: {
     title: 'My Blog',
