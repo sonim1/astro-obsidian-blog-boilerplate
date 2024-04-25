@@ -69,3 +69,9 @@ export default {
   },
 };
 ```
+
+## Contribute 🤝
+
+<a href="https://github.com/sonim1/astro-obsidian-blog-boilerplate/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sonim1/astro-obsidian-blog-boilerplate" />
+</a>
