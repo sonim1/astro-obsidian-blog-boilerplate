@@ -38,10 +38,10 @@
   "expandedSpaces": [
     "/",
     "Spaces/Home/content",
-    "Spaces/Home/content/content/blog",
     "Spaces/Home/content/content/blog/content/blog/ko",
     "Spaces/Home/content/content/blog/content/blog/en",
-    "Spaces/Home/content/content/blog/content/blog/ko"
+    "Spaces/Home/content/content/blog/content/blog/ko",
+    "Spaces/Home/content/content/blog"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
