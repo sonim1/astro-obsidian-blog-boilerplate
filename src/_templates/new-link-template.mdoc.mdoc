@@ -1,0 +1,11 @@
+---
+external: true
+draft: true
+url: PUT THE EXTERNAL URL
+title: UPDATE THIS TITLE
+description: UPDATE THIS DESCRIPTION
+date: <% tp.file.creation_date() %>
+cover: ../../assets/no-image-found.webp
+---
+
+<% await tp.file.move("/content/blog/new-link") %>

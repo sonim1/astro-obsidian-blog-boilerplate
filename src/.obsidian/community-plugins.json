@@ -3,5 +3,6 @@
   "obsidian-excalidraw-plugin",
   "obsidian-textgenerator-plugin",
   "image-converter",
-  "make-md"
+  "make-md",
+  "templater-obsidian"
 ]
