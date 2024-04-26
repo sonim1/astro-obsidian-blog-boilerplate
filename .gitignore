@@ -225,3 +225,5 @@ src/.makemd/superstate.mdc
 src/.obsidian/plugins/make-md/Spaces.mdb
 
 .vercel
+
+.vscode
