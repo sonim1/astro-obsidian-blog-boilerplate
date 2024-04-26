@@ -6,7 +6,7 @@
 
 import SpeedInsights from '@vercel/speed-insights/astro';
 import { ViewTransitions } from 'astro:transitions';
-import { Image } from 'astro:assets';
+import siteConfig from 'site.config.mjs';
 
 // Import the global.css file here so that it is included on
 import '../styles/global.css';
@@ -36,7 +36,7 @@ export interface Props {
 const { lang } = Astro.params;
 const { title, date, readingTime, cover, coverAlt, url } = Astro.props;
 
-const formattedDate = Intl.DateTimeFormat(lang, { timeZone: 'UTC' }).format(date);
+const formattedDate = Intl.DateTimeFormat(siteConfig.defaultLanguage, { timeZone: 'UTC' }).format(date);
 ---
 
 <!DOCTYPE html>

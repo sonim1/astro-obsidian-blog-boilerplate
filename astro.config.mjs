@@ -37,22 +37,12 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  redirects: {
-    '/ko': '/ko/blog',
-    '/ko/': '/ko/blog',
-    '/en': '/en/blog',
-    '/en/': '/en/blog',
-  },
   prefetch: { prefetchAll: true },
   integrations: [
     markdoc(),
     sitemap({
       serialize(item) {
-        if (
-          [`${siteConfig.liveURL}/`, `${siteConfig.liveURL}/en/blog/`, `${siteConfig.liveURL}/ko/blog/`].includes(
-            item.url
-          )
-        ) {
+        if ([`${siteConfig.liveURL}/`, `${siteConfig.liveURL}/blog/`].includes(item.url)) {
           item.lastmod = new Date();
           item.priority = 1;
         }

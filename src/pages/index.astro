@@ -20,14 +20,9 @@ export async function getStaticPaths() {
   return [
     {
       params: {
-        lang: 'ko',
+        lang: siteConfig.defaultLanguage,
       },
     },
-    // {
-    //   params: {
-    //     lang: 'en',
-    //   },
-    // },
   ];
 }
 ---
@@ -44,7 +39,7 @@ export async function getStaticPaths() {
 
     <h2 class="flex items-center font-extrabold justify-center sm:justify-start">
       Recent Articles<a
-        href={'/ko/blog'}
+        href={'/blog'}
         class="text-sm font-semibold bg-none unset"
         aria-label="Open blog page"
         data-astro-prefetch

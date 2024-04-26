@@ -1,11 +1,8 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import DarkModeToggle from './DarkModeToggle.astro';
-
-import { getLangFromUrl } from '../i18n/utils';
 import siteConfig from '../../site.config.mjs';
 
-const lang = getLangFromUrl(Astro.url);
 const {
   header: {
     github: { url: githubURL },
@@ -26,7 +23,7 @@ const {
     <section class="text-text-bold">
       <ul class="unset flex gap-4 [&>li]:p-0">
         <li><HeaderLink href={`/`}>Home</HeaderLink></li>
-        <li><HeaderLink href={`/${lang}/blog`}>Blog</HeaderLink></li>
+        <li><HeaderLink href={`/blog`}>Blog</HeaderLink></li>
       </ul>
     </section>
   </nav>

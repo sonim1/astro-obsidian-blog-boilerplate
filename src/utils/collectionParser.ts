@@ -40,7 +40,7 @@ export function formatBlogPosts(
   // Update url
   filteredPosts.map((post) => {
     const urlArray = post.slug.split('/');
-    urlArray.splice(1, 0, 'blog');
+    urlArray.splice(0, 0, 'blog');
 
     post.data.url = `/${urlArray.join('/')}`;
   });

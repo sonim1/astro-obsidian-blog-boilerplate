@@ -6,6 +6,7 @@ export default {
     title: 'My Blog',
     description: `Hello world!`,
   },
+  defaultLanguage: 'ko', // ko
   header: {
     github: {
       url: 'https://github.com/sonim1',

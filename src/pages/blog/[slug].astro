@@ -8,22 +8,20 @@ export async function getStaticPaths({}) {
   const allBlogPosts = await getCollection('blog', ({ data }) => data.draft === false && data.external === false);
 
   const paths = allBlogPosts.map((post) => {
-    const [lang, ...slug] = post.slug.split('/');
-    return { params: { lang, slug: slug.join('/') || undefined }, props: post };
+    return { params: { slug: post.slug || undefined }, props: post };
   });
 
   return paths;
 }
 
 const post = Astro.props;
-const { slug, lang } = Astro.params;
+const { slug } = Astro.params;
 
 if (typeof slug !== 'string') {
   throw Error(`slug should be string. Received: ${slug}`);
 }
 
-const result = await getEntryBySlug('blog', `${lang}/${slug}`);
-
+const result = await getEntryBySlug('blog', `${slug}`);
 if (!result) {
   throw Error(`No blog post found for slug: ${slug}`);
 }
@@ -45,7 +43,7 @@ const { Content } = await result.render();
     title={post.data.title}
     description={post.data.external ? undefined : post.data.description}
     publishDate={post.data.date.toISOString()}
-    pagePath={`/${lang}/blog/${slug}`}
+    pagePath={`/blog/${slug}`}
     ogImageAbsoluteUrl={post.data.cover.src}
     ogImageAltText={post.data.coverAlt}
     ogImageWidth={post.data.cover.width}

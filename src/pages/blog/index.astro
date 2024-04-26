@@ -3,34 +3,15 @@ import PageLayout from '@layouts/PageLayout.astro';
 import PageMeta from '@components/PageMeta.astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/date';
-import siteConfig from '../../../../site.config.mjs';
+import siteConfig from '../../../site.config.mjs';
 
-export async function getStaticPaths() {
-  return [
-    {
-      params: {
-        lang: 'ko',
-      },
-    },
-    {
-      params: {
-        lang: 'en',
-      },
-    },
-  ];
-}
-
-const { lang } = Astro.params;
-
-const allBlogPosts = await getCollection(
-  'blog',
-  (post) => post.data.draft !== true && post.slug.indexOf(`${lang}/`) === 0
-);
+const lang = siteConfig.defaultLanguage;
+const allBlogPosts = await getCollection('blog', (post) => post.data.draft !== true);
 
 const sortedPosts = allBlogPosts
   .map((post) => ({
     ...post,
-    path: `/${lang}/blog/${post.slug.substring(3)}`,
+    path: `/blog/${post.slug}`,
   }))
   .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
@@ -39,12 +20,7 @@ const sortedPosts = allBlogPosts
   <PageMeta title={`Blog | ${siteConfig.site.title}`} slot="meta" />
   <section slot="main">
     {
-      lang === 'en' ? (
-        <div class="text-center mt-20">
-          <h1 class="text-4xl font-extrabold">Coming soon</h1>
-          <p class="mt-3 text-lg text-gray-500">English posts are in translation.</p>
-        </div>
-      ) : (
+      (
         <ul>
           {sortedPosts.map((post) => {
             return (

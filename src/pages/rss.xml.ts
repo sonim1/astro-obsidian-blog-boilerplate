@@ -39,7 +39,7 @@ export const GET = async () => {
     const title = frontmatter.title;
     const pubDate = frontmatter.date;
     const description = frontmatter.description;
-    const link = `${baseUrl}/${lang}/blog/${slug}/`;
+    const link = `${baseUrl}/blog/${slug}/`;
     return {
       title,
       pubDate,
