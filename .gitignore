@@ -220,5 +220,8 @@ dist
 # versions since 1.0 use workspace.json instead
 src/.obsidian/workspace.json
 src/.obsidian/text-generator.json
+src/.makemd/fileCache.mdc
+src/.makemd/superstate.mdc
+src/.obsidian/plugins/make-md/Spaces.mdb
 
 .vercel
