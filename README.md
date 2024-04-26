@@ -62,7 +62,19 @@ Now you can use Obsidian to write your post.
 
 ## Add a new post
 
-You can add new posts using Templates plugin in Obsidian.
+You can add new posts using [Templater](https://silentvoid13.github.io/Templater/) plugin in Obsidian.
+
+```
+Templater is a template language that lets you insert variables and functions results into your notes. It will also let you execute JavaScript code manipulating those variables and functions.
+
+With Templater, you will be able to create powerful templates to automate manual tasks.
+```
+
+1. Open Obsidian
+2. Open command palette `Cmd + P` or `Ctrl + P`
+3. Type `Templater: Create new note from template` and select it (You can also set a shortcut for this)
+4. Select the `new-link-template.mdoc` or `new-post-template.mdoc` template
+5. Done
 
 ## How do I deploy?
 
