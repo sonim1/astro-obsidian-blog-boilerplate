@@ -37,11 +37,11 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "Spaces/Home/content",
     "Spaces/Home/content/content/blog/content/blog/ko",
     "Spaces/Home/content/content/blog/content/blog/en",
     "Spaces/Home/content/content/blog/content/blog/ko",
-    "Spaces/Home/content/content/blog"
+    "Spaces/Home/content/content/blog",
+    "Spaces/Home/content/blog"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
@@ -50,7 +50,10 @@
   "folderContextFile": "context",
   "folderFrameFile": "frames",
   "spacesFolder": "Spaces",
-  "hiddenFiles": [],
+  "hiddenFiles": [
+    "content/config.ts",
+    "content"
+  ],
   "hiddenExtensions": [
     ".mdb"
   ],
