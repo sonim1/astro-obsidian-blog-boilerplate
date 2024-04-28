@@ -4,7 +4,7 @@
 
 This blog boilerplate is ideal for developers looking for a robust, performance-optimized platform for blogging. Set it up on your GitHub repository and start sharing your ideas!
 
-![Astro with obsidian](https://astro-obsidian-blog-boilerplate.vercel.app/images/astro-plus-obsidian.webp)
+![Astro with obsidian](https://astro-obsidian-blog-boilerplate.vercel.app/images/astro-plus-obisdian.webp)
 
 ## Showcase
 
