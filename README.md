@@ -9,7 +9,7 @@ This blog boilerplate is ideal for developers looking for a robust, performance-
 
 [DEMO](https://astro-obsidian-blog-boilerplate.vercel.app/)
 
-[Kendrick's dev blog](https://dev.sonim1.com/) | [Theo's dev box](https://blog-astro-sandy.vercel.app/)
+[Kendrick's dev blog](https://dev.sonim1.com/) | [Theo's dev box](https://www.codetheo.com/)
 
 ## Features of the Astro-Obsidian Blog Boilerplate
 
