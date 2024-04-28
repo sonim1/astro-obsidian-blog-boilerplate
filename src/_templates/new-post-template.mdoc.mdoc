@@ -2,13 +2,13 @@
 draft: true
 title: UPDATE THIS TITLE
 description: UPDATE THIS DESCRIPTION
-date: <% tp.file.creation_date() %>
+date: <% tp.file.creation_date("YYYY-MM-DD") %>
 cover: ../../assets/no-image-found.webp
 ---
 <% await tp.file.move("/content/blog/new-post") %>
 ## How to write a new post
 1. Update the file name
-2. Update the frontmatter. 
+2. Update the frontmatter. `
 	- `title` and `description` are required. 
 	- `cover` is optional. If you don't have a cover image, you can use the default one. 
 	- `draft` is required. If the post is a draft, set it to `true`. Otherwise, set it to `false`.
