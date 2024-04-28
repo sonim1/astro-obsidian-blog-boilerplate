@@ -57,7 +57,8 @@
   "hiddenExtensions": [
     ".mdb"
   ],
-  "newFileLocation": "root",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "content/blog",
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
