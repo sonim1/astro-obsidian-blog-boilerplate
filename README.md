@@ -1,10 +1,9 @@
 # Astro + Obsidian Blog Boilerplate
 
-![Logo](https://astro-obsidian-blog-boilerplate.vercel.app/images/og.png)
-
+<p align="center">
+  <img src="https://astro-obsidian-blog-boilerplate.vercel.app/images/og.png" width="200" alt="Logo" />
+</p>
 This blog boilerplate is ideal for developers looking for a robust, performance-optimized platform for blogging. Set it up on your GitHub repository and start sharing your ideas!
-
-![Astro with obsidian](https://astro-obsidian-blog-boilerplate.vercel.app/images/astro-plus-obisdian.webp)
 
 ## Showcase
 
@@ -13,6 +12,10 @@ This blog boilerplate is ideal for developers looking for a robust, performance-
 [Kendrick's dev blog](https://dev.sonim1.com/) | [Theo's dev box](https://blog-astro-sandy.vercel.app/)
 
 ## Features of the Astro-Obsidian Blog Boilerplate
+
+<p align="center">
+  <img src="https://astro-obsidian-blog-boilerplate.vercel.app/images/astro-plus-obisdian.webp" width="400" alt="Icons" />
+</p>
 
 This boilerplate harnesses the power of Astro v4, ensuring your blog is built with the latest in web development standards. It leverages Obsidian for seamless content management, allowing you to write and organize posts effortlessly. Here are some key features:
 
@@ -163,7 +166,7 @@ At this time, please activate lazy mode for page performance.
   <img src="https://contrib.rocks/image?repo=sonim1/astro-obsidian-blog-boilerplate" />
 </a>
 
-## TODOs
+## TODO
 
 - [ ] Add the starlight [link](https://starlight.astro.build/guides/components/)
 - [ ] Add the pagination
